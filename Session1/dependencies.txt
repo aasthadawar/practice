@@ -1,0 +1,11 @@
+devDependencies : dev dependencies are the modules which are only required during the
+                  development process.
+                  for eg: eslint which is used to check the standards of javascript code
+                  syntax: npm i eslint --D
+                  (installed in devDependencies in package.json)
+
+Dependencies : Dependencies are the modules which are required both durig the 
+               development and at runtime.
+               for eg: axios is used for fetching data for the api
+               syntax: npm i axios --S
+               (installed in Dependencies in package.json)

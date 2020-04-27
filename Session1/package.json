@@ -1,0 +1,30 @@
+{
+  "name": "session1",
+  "version": "1.0.0",
+  "description": "node bootcamp session1",
+  "main": "FileHandling.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aasthadawar/NodeSessions.git"
+  },
+  "keywords": [
+    "node",
+    "bootcamp",
+    "session"
+  ],
+  "author": "aastha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aasthadawar/NodeSessions/issues"
+  },
+  "homepage": "https://github.com/aasthadawar/NodeSessions#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
