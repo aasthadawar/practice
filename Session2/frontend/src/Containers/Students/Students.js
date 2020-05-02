@@ -13,7 +13,7 @@ class Students extends Component {
   // initial axios call to render data initially on the screen
   componentDidMount() {
     axios
-      .get('http://localhost:7890/students')
+      .get('http://localhost:9034/students')
       .then((response) => {
         this.setState({ ...this.state, filterArray: response.data });
       })
@@ -24,7 +24,7 @@ class Students extends Component {
   handleBranch = (event) => {
     let branchName = event.target.id;
     axios
-      .get(`http://localhost:7890/students?branch=${branchName}`)
+      .get(`http://localhost:9034/students?branch=${branchName}`)
       .then((response) => {
         this.setState({ ...this.state, filterArray: response.data });
       })

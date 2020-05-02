@@ -1,58 +1,41 @@
-const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
 
-const handleRequestResponse = (request, response) => {
-  response.setHeader('Access-Control-Allow-Origin', '*');
-  let route = url.parse(request.url).pathname;
+const headerRequestResponse = (request, response) => {
   let method = request.method;
   let fullPath;
-
-  //route for home page
-  if (route === '/home') {
-    if (method === 'GET') {
+  let queryString = url.parse(request.url, true).query.page;
+  if (method === 'GET') {
+    //route for home page
+    if (queryString === 'home') {
       let relativePath = '/public/Home.html';
       fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
     }
-  }
 
-  // route for about page
-  else if (route === '/about') {
-    if (method === 'GET') {
+    // route for about page
+    else if (queryString === 'about') {
       let relativePath = '/public/About.html';
       fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
     }
-  }
 
-  //route for contact page
-  else if (route === '/contact') {
-    if (method === 'GET') {
+    //route for contact page
+    else if (queryString === 'contact') {
       let relativePath = '/public/Contact.html';
       fullPath = path.join(__dirname, relativePath);
-    } else {
-      response.end('wrong method');
     }
+
+    fs.readFile(fullPath, (err, content) => {
+      if (err) {
+        response.end(err);
+      } else {
+        response.write(content);
+        response.end();
+      }
+    });
   } else {
     response.end('wrong url');
   }
-
-  fs.readFile(fullPath, (err, content) => {
-    if (err) {
-      response.end(err);
-    } else {
-      response.write(content);
-      response.end();
-    }
-  });
 };
 
-const server = http.createServer(handleRequestResponse);
-
-server.listen(process.env.PORT || 2345, () => {
-  console.log('server start');
-});
+module.exports = headerRequestResponse;

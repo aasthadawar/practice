@@ -1,7 +1,7 @@
 {
-  "name": "session2",
+  "name": "session3_backend",
   "version": "1.0.0",
-  "description": "node bootcamp session2",
+  "description": "express session1 backend ( training session3)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,9 @@
     "url": "git+https://github.com/aasthadawar/NodeSessions.git"
   },
   "keywords": [
+    "express",
     "node",
-    "bootcamp",
-    "sessions",
-    "lectures",
-    "rest",
-    "api"
+    "session"
   ],
   "author": "aastha",
   "license": "ISC",
@@ -25,6 +22,8 @@
   },
   "homepage": "https://github.com/aasthadawar/NodeSessions#readme",
   "dependencies": {
-    "cors": "^2.8.5"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }

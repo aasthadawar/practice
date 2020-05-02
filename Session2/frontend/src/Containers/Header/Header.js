@@ -6,9 +6,10 @@ class Header extends Component {
   // function to handle request for the links
   handlePage = (event) => {
     let pathParam = event.target.id;
-    axios.get(`http://localhost:2345/${pathParam}`).then((response) => {
-      document.getElementById('head').innerHTML = response.data;
-    });
+    axios.get(`http://localhost:9034/header?page=${pathParam}`)
+      .then((response) => {
+        document.getElementById('head').innerHTML = response.data;
+      });
   };
   render() {
     return (
